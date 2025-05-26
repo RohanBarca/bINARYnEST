@@ -1,0 +1,714 @@
+/* Universal Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Fallback for Cal Sans */
+  background-color: #1a1a2e; /* Darker, more modern background */
+  color: #e0e0e0; /* Softer white text */
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a2e;
+  color: white;
+  padding: 15px 30px; /* Increased padding */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-left img {
+  height: 45px; /* Slightly larger logo */
+}
+
+.navbar-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00bcd4; /* Accent color for title */
+}
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Increased gap */
+}
+
+.navbar-right {
+  display: flex;
+  gap: 20px; /* Increased gap */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #e0e0e0;
+  padding: 8px 16px;
+  border-radius: 8px; /* Softer corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smoother transition */
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  background-color: #3f4e6e; /* Slightly darker hover */
+  color: white;
+}
+
+/* Primary Button */
+.button-primary {
+  background: linear-gradient(45deg, #6a5acd, #00bfff); /* Original gradient */
+  color: white;
+  padding: 12px 25px; /* More generous padding */
+  border: none;
+  border-radius: 8px; /* Consistent border-radius */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Added transform for subtle animation */
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Section Separator */
+.section-separator {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15); /* Softer line */
+  width: 80%; /* Slightly narrower */
+  margin: 40px auto; /* Centered with more vertical space */
+}
+
+/* Welcome Section */
+.welcome-section {
+  min-height: 450px; /* Use min-height for responsiveness */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align text to the left by default */
+  padding: 50px 5%; /* Responsive padding */
+  text-align: left;
+}
+
+.welcome-section .head {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 700; /* Bolder for impact */
+  font-size: 3.5em; /* Larger font for modern feel */
+  padding-bottom: 20px;
+  line-height: 1.2;
+  color: white;
+}
+
+.welcome-section .head span {
+  color: #00bcd4; /* Consistent accent color */
+}
+
+.welcome-section .bottom {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 300; /* Lighter weight */
+  font-size: 1.2em; /* Readable size */
+  padding-bottom: 40px;
+  color: #b0b0b0;
+  max-width: 700px; /* Limit width for readability */
+}
+
+.welcome-section .bottom span {
+  color: #00bcd4; /* Consistent accent color */
+}
+
+.button-explore {
+  height: 55px; /* Slightly larger */
+  width: 180px; /* Slightly wider */
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00bcd4, #007bff); /* Adjusted gradient */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button-explore:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Section Title for Languages */
+.section-title {
+  padding: 50px 0 30px;
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 600; /* Semi-bold */
+  font-style: normal;
+  font-size: 2.5em; /* Larger and more impactful */
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.section-title span {
+  color: #00bcd4; /* Accent color */
+  margin-left: 10px; /* Space from dashes */
+}
+
+/* Content Area for Cards */
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 25px; /* More space between cards */
+  padding: 20px 5%; /* Responsive padding */
+  max-width: 1200px; /* Max width for content */
+  margin: 0 auto; /* Center content */
+}
+
+/* Card Styles */
+.card {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center;
+  background-color: #282828;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px; /* More rounded corners */
+  overflow: hidden;
+  padding: 25px; /* More padding inside card */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+  width: 90px; /* Slightly larger image */
+  height: 90px;
+  object-fit: contain; /* Ensure logo fits */
+  border-radius: 8px;
+  margin-bottom: 20px; /* Space between image and content */
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-description {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1em;
+  padding-bottom: 20px;
+  color: #b0b0b0;
+}
+
+.card-description span {
+  font-weight: bold;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* More space between buttons */
+  justify-content: center;
+  margin-top: auto; /* Push buttons to the bottom */
+}
+
+.button-group button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff; /* Default button color */
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-group button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-1px);
+}
+
+/* Specific card colors */
+.html .button-group button:first-child {
+  background-color: #e44d26; /* HTML orange */
+}
+.html .button-group button:first-child:hover {
+  background-color: #c93b1a;
+}
+.html .button-group button:last-child {
+  background-color: #ff0000; /* YouTube red */
+}
+.html .button-group button:last-child:hover {
+  background-color: #cc0000;
+}
+
+.css .button-group button:first-child {
+  background-color: #264de4; /* CSS blue */
+}
+.css .button-group button:first-child:hover {
+  background-color: #1a3aae;
+}
+.css .button-group button:last-child {
+  background-color: #ff0000; /* YouTube red */
+}
+.css .button-group button:last-child:hover {
+  background-color: #cc0000;
+}
+
+/* Other Web Apps Section */
+.coming-soon-section {
+  text-align: center;
+  background-color: #282828;
+  padding: 50px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  max-width: 500px; /* Increased max-width */
+  width: 100%;
+  margin: 50px auto; /* Centered with more vertical space */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.coming-soon-section img {
+  width: 100px; /* Larger GIF */
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.coming-soon-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #00bcd4; /* Accent color */
+}
+
+.coming-soon-section p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #b0b0b0;
+}
+
+.timer {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.1em;
+  color: #e0e0e0;
+  gap: 15px; /* Space between timer elements */
+}
+
+.timer div {
+  text-align: center;
+  flex: 1; /* Distribute space evenly */
+}
+
+.timer span {
+  display: block;
+  font-size: 36px; /* Larger timer digits */
+  font-weight: bold;
+  color: #00bcd4; /* Accent color */
+  margin-bottom: 5px;
+}
+
+/* Social Media Section Title */
+.social-media-title {
+  padding: 50px 0 30px;
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2.5em;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.social-media-title span {
+  color: #00bcd4;
+  margin-left: 10px;
+}
+
+/* App Containers */
+.app-container {
+  padding-top: 20px;
+  padding-bottom: 50px; /* More bottom padding */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* More space between apps */
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app {
+  width: 280px; /* Consistent width */
+  background: #33334d; /* Darker background for apps */
+  border-radius: 15px; /* More rounded */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 280px; /* Flex basis for responsiveness */
+  min-width: 250px; /* Minimum width for small screens */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.app-logo {
+  width: 90px; /* Larger logo */
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.app-description {
+  font-size: 15px;
+  color: #c0c0c0; /* Lighter gray for description */
+  margin-bottom: 25px;
+}
+
+.app-button {
+  background-color: #00bcd4; /* Accent color for app buttons */
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+.app-button:hover {
+  background-color: #00a3b8; /* Darker accent on hover */
+  transform: translateY(-1px);
+}
+
+/* Specific App Colors */
+.YT {
+  background-color: #b33939; /* YouTube-like red */
+}
+.YT .app-button {
+  background-color: #ff0000;
+}
+.YT .app-button:hover {
+  background-color: #cc0000;
+}
+
+.GT {
+  background-color: #212121; /* GitHub-like dark */
+}
+.GT .app-button {
+  background-color: #333;
+}
+.GT .app-button:hover {
+  background-color: #000;
+}
+
+.LN {
+  background-color: #0077b5; /* LinkedIn-like blue */
+}
+.LN .app-button {
+  background-color: #0077b5;
+}
+.LN .app-button:hover {
+  background-color: #005f93;
+}
+
+.X {
+  background-color: #000000; /* X-like black */
+}
+.X .app-button {
+  background-color: #000;
+}
+.X .app-button:hover {
+  background-color: #333;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #1a1a2e; /* Consistent with navbar and body */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px 20px; /* More padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column {
+  width: 250px; /* Consistent width for columns */
+  padding: 15px;
+  text-align: center; /* Center content in columns */
+  margin-bottom: 20px; /* Space between columns on wrap */
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px; /* More space between list items */
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #c0c0c0; /* Lighter color for footer links */
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 400;
+}
+
+.footer-column a:hover {
+  background-color: #3f4e6e;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .welcome-section .head {
+    font-size: 3em;
+  }
+  .section-title, .social-media-title {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .navbar-center {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .navbar-right {
+    margin-top: 15px;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .welcome-section {
+    padding: 40px 5%;
+    text-align: center; /* Center text on smaller screens */
+    align-items: center;
+  }
+
+  .welcome-section .head {
+    font-size: 2.5em;
+    padding-bottom: 15px;
+  }
+
+  .welcome-section .bottom {
+    font-size: 1em;
+    padding-bottom: 30px;
+    max-width: 90%;
+  }
+
+  .section-title, .social-media-title {
+    font-size: 1.8em;
+    padding: 40px 15px 25px;
+  }
+  .section-title span, .social-media-title span {
+    display: block; /* Break line for span */
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .content {
+    grid-template-columns: 1fr; /* Single column layout */
+    padding: 15px;
+  }
+
+  .card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+
+  .card-content {
+    padding: 0;
+  }
+
+  .card-description {
+    padding-bottom: 15px;
+    font-size: 0.95em;
+  }
+
+  .button-group {
+    justify-content: center;
+  }
+
+  .coming-soon-section {
+    padding: 30px 20px;
+    max-width: 90%;
+    margin: 30px auto;
+  }
+
+  .coming-soon-section h2 {
+    font-size: 24px;
+  }
+
+  .coming-soon-section p {
+    font-size: 1em;
+  }
+
+  .timer span {
+    font-size: 32px;
+  }
+
+  .app-container {
+    padding: 15px;
+  }
+
+  .app {
+    width: 90%; /* Adjust app width for smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+  }
+
+  .footer-column {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-left {
+    gap: 10px;
+  }
+
+  .navbar-title {
+    font-size: 20px;
+  }
+
+  .navbar a {
+    padding: 6px 10px;
+  }
+
+  .button-primary {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .welcome-section .head {
+    font-size: 2em;
+  }
+
+  .welcome-section .bottom {
+    font-size: 0.9em;
+  }
+
+  .button-explore {
+    height: 45px;
+    width: 150px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .section-title, .social-media-title {
+    font-size: 1.5em;
+  }
+
+  .card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card-description {
+    font-size: 0.9em;
+  }
+
+  .button-group button {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  .coming-soon-section img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .coming-soon-section h2 {
+    font-size: 20px;
+  }
+
+  .coming-soon-section p {
+    font-size: 0.9em;
+  }
+
+  .timer span {
+    font-size: 28px;
+  }
+
+  .app-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .app-description {
+    font-size: 0.85em;
+  }
+
+  .app-button {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+
+  .footer-column a {
+    font-size: 0.9em;
+  }
+}
