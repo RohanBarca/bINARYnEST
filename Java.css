@@ -1,0 +1,840 @@
+/* --- Study Page Specific Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Fallback for Cal Sans */
+  background-color: #1a1a2e; /* Darker, more modern background */
+  color: #e0e0e0; /* Softer white text */
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a2e;
+  color: white;
+  padding: 15px 30px; /* Increased padding */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-left img {
+  height: 45px; /* Slightly larger logo */
+}
+
+.navbar-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00bcd4; /* Accent color for title */
+}
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Increased gap */
+}
+
+.navbar-right {
+  display: flex;
+  gap: 20px; /* Increased gap */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #e0e0e0;
+  padding: 8px 16px;
+  border-radius: 8px; /* Softer corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smoother transition */
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  background-color: #3f4e6e; /* Slightly darker hover */
+  color: white;
+}
+
+.button-primary {
+  background: linear-gradient(45deg, #6a5acd, #00bfff); /* Original gradient */
+  color: white;
+  padding: 12px 25px; /* More generous padding */
+  border: none;
+  border-radius: 8px; /* Consistent border-radius */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Added transform for subtle animation */
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.study-main-content {
+    padding: 50px 5%;
+    max-width: 1400px; /* Slightly wider content area */
+    margin: 0 auto;
+    color: #e0e0e0;
+}
+
+/* Lesson Overview Section */
+.lesson-overview-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.lesson-title {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 700;
+    font-size: 3.5em; /* Larger for impact */
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.lesson-intro {
+    font-size: 1.3em;
+    color: #b0b0b0;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    line-height: 1.7;
+}
+
+.lesson-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.lesson-stats div {
+    background-color: #3f4e6e; /* Darker accent */
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-stats div i {
+    color: #00bcd4; /* Accent color for icons */
+}
+
+/* Video Player and Notes Layout */
+.video-notes-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; /* Align content to the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-bottom: 50px;
+}
+
+.video-player-container {
+    flex: 3; /* Takes more space */
+    min-width: 320px; /* Minimum width for the video container */
+    background-color: #282828;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    background-color: black; /* To hide flash before video loads */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.current-video-title {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1.8em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.video-player-description {
+    font-size: 1.05em;
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+.lesson-sidebar {
+    flex: 1; /* Takes less space */
+    min-width: 280px; /* Minimum width for sidebar */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-block {
+    background-color: #282828;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-block h3 {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #00bcd4;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-block h3 i {
+    font-size: 1.2em;
+}
+
+.video-playlist{
+    list-style: none;
+    padding: 0;
+    max-height: 400px; /* Adjust this value as needed */
+    overflow-y: auto; /* Adds a vertical scrollbar if content exceeds max-height */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #00bcd4 #3a3a3a; /* For Firefox: thumb color, track color */
+}
+.notes-list {
+    list-style: none;
+    padding: 0;
+}
+
+.video-playlist li {
+    background-color: #3a3a3a;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.video-playlist::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+.video-playlist::-webkit-scrollbar-track {
+    background: #3a3a3a; /* Color of the scrollbar track */
+    border-radius: 10px;
+}
+
+.video-playlist::-webkit-scrollbar-thumb {
+    background-color: #00bcd4; /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    border: 2px solid #3a3a3a; /* Padding around the thumb */
+}
+
+.video-playlist::-webkit-scrollbar-thumb:hover {
+    background-color: #0099ac; /* Darker color on hover */
+}
+
+
+
+.video-playlist li:hover {
+    background-color: #4e4e4e;
+    transform: translateY(-2px);
+}
+
+.video-playlist li.active {
+    background-color: #00bcd4; /* Accent for active video */
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 189, 212, 0.3);
+}
+
+.video-playlist li.active span {
+    color: white; /* Ensure text is white */
+}
+
+.video-playlist li.active i {
+    color: white; /* Ensure icon is white */
+}
+
+
+.video-playlist li span {
+    color: #e0e0e0;
+    font-size: 1em;
+}
+
+.video-playlist li i {
+    color: #00bcd4;
+    font-size: 1.1em;
+}
+
+.notes-list li {
+    margin-bottom: 12px;
+}
+
+.notes-list li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #3a3a3a;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.notes-list li a:hover {
+    background-color: #4e4e4e;
+    color: white;
+}
+
+.notes-list li a i {
+    color: #00bcd4;
+    font-size: 1.1em;
+}
+
+/* Course Description Section */
+.description-section h2 {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 600;
+    font-size: 2.2em;
+    color: white;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.description-section p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.description-section h3 {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 500;
+    font-size: 1.6em;
+    color: #00bcd4;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.description-section ul {
+    list-style: none; /* Remove default bullet */
+    padding: 0;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+}
+
+.description-section ul li {
+    position: relative;
+    padding-left: 30px; /* Space for custom bullet */
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    color: #c0c0c0;
+    line-height: 1.6;
+}
+
+.description-section ul li::before {
+    content: '\2022'; /* Unicode for a bullet point */
+    color: #00bcd4; /* Accent color for bullet */
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+/* Comments/Discussion Section */
+.comments-discussion-section h2 {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 600;
+    font-size: 2.2em;
+    color: white;
+    margin-bottom: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.comments-discussion-section h2 i {
+    color: #00bcd4;
+    font-size: 1.1em;
+}
+
+
+.comment-form {
+    background-color: #282828;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: #1a1a2e; /* Darker input */
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    min-height: 120px;
+    resize: vertical;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.comment-form textarea::placeholder {
+    color: #999;
+}
+
+.comment-form .button-primary {
+    align-self: flex-end;
+    padding: 12px 30px;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment-item {
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #00bcd4;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    display: flex; /* For date alignment */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-date {
+    font-size: 0.85em;
+    color: #888;
+    font-weight: normal;
+}
+
+.comment-text {
+    color: #c0c0c0;
+    line-height: 1.6;
+}
+
+/* --- Responsive Styles for Study Page --- */
+
+@media (max-width: 1200px) {
+    .lesson-title {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 1024px) {
+    .lesson-title {
+        font-size: 2.8em;
+    }
+    .lesson-intro {
+        font-size: 1.15em;
+    }
+    .video-notes-layout {
+        flex-direction: column; /* Stack video and sidebar */
+    }
+    .video-player-container,
+    .lesson-sidebar {
+        flex: none; /* Remove flex grow/shrink */
+        width: 100%; /* Take full width */
+        max-width: 800px; /* Constrain max width for central alignment */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sidebar-block {
+        padding: 18px;
+    }
+    .current-video-title {
+        font-size: 1.6em;
+    }
+    .description-section h2,
+    .comments-discussion-section h2 {
+        font-size: 2em;
+    }
+    .description-section p,
+    .description-section ul li,
+    .comment-text {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .study-main-content {
+        padding: 40px 3%; /* More padding on smaller screens */
+    }
+    .lesson-title {
+        font-size: 2.2em;
+    }
+    .lesson-intro {
+        font-size: 1em;
+    }
+    .lesson-stats {
+        gap: 20px;
+    }
+    .lesson-stats div {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+    .video-player-container,
+    .lesson-sidebar,
+    .comment-form,
+    .comments-list {
+        padding: 20px;
+    }
+    .current-video-title {
+        font-size: 1.4em;
+    }
+    .video-player-description {
+        font-size: 0.95em;
+    }
+    .sidebar-block h3 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+    .video-playlist li,
+    .notes-list li a {
+        font-size: 0.95em;
+        padding: 10px 12px;
+    }
+    .description-section h2,
+    .comments-discussion-section h2 {
+        font-size: 1.8em;
+        gap: 10px;
+    }
+    .description-section h3 {
+        font-size: 1.4em;
+    }
+    .comment-form textarea {
+        min-height: 100px;
+    }
+    .comment-author {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .study-main-content {
+        padding: 30px 2%;
+    }
+    .lesson-title {
+        font-size: 1.8em;
+    }
+    .lesson-intro {
+        font-size: 0.9em;
+    }
+    .lesson-stats {
+        flex-direction: column; /* Stack stats vertically */
+        gap: 15px;
+    }
+    .lesson-stats div {
+        width: 80%; /* Make them wider */
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .video-player-container,
+    .lesson-sidebar,
+    .comment-form,
+    .comments-list {
+        padding: 15px;
+    }
+    .current-video-title {
+        font-size: 1.2em;
+    }
+    .video-player-description {
+        font-size: 0.9em;
+    }
+    .sidebar-block h3 {
+        font-size: 1.1em;
+    }
+    .video-playlist li,
+    .notes-list li a {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+    .description-section h2,
+    .comments-discussion-section h2 {
+        font-size: 1.5em;
+        flex-direction: column;
+        text-align: center;
+    }
+    .description-section h3 {
+        font-size: 1.2em;
+    }
+    .comment-form .button-primary {
+        width: 100%;
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+    .comment-author {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.95em;
+    }
+    .comment-date {
+        margin-top: 5px;
+    }
+    .comment-text {
+        font-size: 0.9em;
+    }
+}
+
+
+
+.video-section,
+.notes-section,
+.description-section,
+.comments-section {
+    margin-bottom: 40px;
+}
+
+.video-section h2,
+.notes-section h2,
+.description-section h2,
+.comments-section h2 {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+    color: #00bcd4;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.video-description {
+    font-size: 1.1em;
+    color: #b0b0b0;
+    text-align: center;
+}
+
+.notes-section ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.notes-section ul li {
+    margin-bottom: 15px;
+}
+
+.notes-section ul li a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.notes-section ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.description-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #c0c0c0;
+}
+
+.description-section ul li {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+
+.description-section p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #b0b0b0;
+    margin-bottom: 15px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.comment-form textarea::placeholder {
+    color: #888;
+}
+
+.comment-form .button-primary {
+    align-self: flex-end;
+    padding: 10px 25px;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-item {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #00bcd4;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.comment-text {
+    color: #c0c0c0;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.comment-date {
+    font-size: 0.9em;
+    color: #888;
+    text-align: right;
+    display: block;
+}
+
+/* Responsive Styles for Study Page */
+@media (max-width: 768px) {
+    .study-header h1 {
+        font-size: 2.5em;
+    }
+
+    .study-header .description {
+        font-size: 1em;
+    }
+
+    .study-content {
+        padding: 25px;
+    }
+
+    .video-section h2,
+    .notes-section h2,
+    .description-section h2,
+    .comments-section h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .study-header h1 {
+        font-size: 2em;
+    }
+
+    .study-header .description {
+        font-size: 0.9em;
+    }
+
+    .study-content {
+        padding: 15px;
+    }
+
+    .video-section h2,
+    .notes-section h2,
+    .description-section h2,
+    .comments-section h2 {
+        font-size: 1.5em;
+    }
+
+    .comment-form .button-primary {
+        width: 100%;
+    }
+}
